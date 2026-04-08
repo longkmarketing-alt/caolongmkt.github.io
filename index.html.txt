@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kieu Cao Long | Marketing Manager Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        .hero-gradient { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); }
+        .card-hover:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+    </style>
+</head>
+<body>
+
+    <header class="hero-gradient text-white py-20 px-6">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="w-48 h-48 rounded-full border-4 border-emerald-500 overflow-hidden shadow-2xl">
+                <img src="https://files.catbox.moe/p9o78q.jpg" alt="Kieu Cao Long" class="w-full h-full object-cover">
+            </div>
+            <div class="text-center md:text-left">
+                <h1 class="text-5xl font-bold mb-2 tracking-tight">KIỀU CAO LONG [cite: 10]</h1>
+                <p class="text-emerald-400 text-xl font-medium mb-6 uppercase tracking-widest">Senior Marketing Manager | Growth & Data-Driven [cite: 11]</p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-slate-300">
+                    <span><i class="fas fa-phone mr-2"></i>0388 830 044 [cite: 12]</span>
+                    <span><i class="fas fa-envelope mr-2"></i>longkc.marketing@gmail.com [cite: 13]</span>
+                    <span><i class="fas fa-map-marker-alt mr-2"></i>Cầu Giấy, Hà Nội [cite: 14, 15]</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="max-w-6xl mx-auto -mt-10 px-6 grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-emerald-500 text-center">
+            <p class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-2">Doanh thu/Tháng</p>
+            <p class="text-3xl font-bold text-slate-800">4 - 6 Tỷ [cite: 93]</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-blue-500 text-center">
+            <p class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-2">Tỷ lệ CP/DT</p>
+            <p class="text-3xl font-bold text-slate-800">25 - 30% [cite: 59, 93]</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-purple-500 text-center">
+            <p class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-2">Tăng trưởng CR</p>
+            <p class="text-3xl font-bold text-slate-800">+15% [cite: 19, 40]</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-orange-500 text-center">
+            <p class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-2">Kinh nghiệm</p>
+            <p class="text-3xl font-bold text-slate-800">8+ Năm [cite: 18]</p>
+        </div>
+    </section>
+
+    <main class="max-w-5xl mx-auto py-20 px-6">
+        <h2 class="text-3xl font-bold text-slate-800 mb-12 flex items-center">
+            <span class="w-8 h-1 bg-emerald-500 mr-4"></span> KINH NGHIỆM THỰC CHIẾN [cite: 18]
+        </h2>
+
+        <div class="space-y-12 border-l-2 border-slate-200 pl-8 ml-4">
+            <div class="relative">
+                <div class="absolute -left-[41px] top-0 w-5 h-5 bg-emerald-500 rounded-full border-4 border-white"></div>
+                <h3 class="text-xl font-bold text-slate-800">LEADER DIGITAL MARKETING [cite: 84]</h3>
+                <p class="text-emerald-600 font-semibold mb-2">Hệ thống Thẩm mỹ Quốc tế (Qatar, UAE, Malaysia...)</p>
+                <p class="text-slate-500 text-sm mb-4 italic">07/2025 – Nay [cite: 85, 86]</p>
+                <ul class="text-slate-600 space-y-2 text-sm leading-relaxed">
+                    <li>• Quản trị hệ thống Performance Marketing đa quốc gia dựa trên Data-driven[cite: 88, 92].</li>
+                    <li>• Ứng dụng AI Marketing Automation tối ưu hóa tỷ lệ chuyển đổi (CR) và ROI[cite: 89, 91].</li>
+                    <li>• Kiểm soát CP/DT ở mức 25-30% cho các chiến dịch ngân sách lớn[cite: 93].</li>
+                </ul>
+            </div>
+
+            <div class="relative">
+                <div class="absolute -left-[41px] top-0 w-5 h-5 bg-slate-300 rounded-full border-4 border-white"></div>
+                <h3 class="text-xl font-bold text-slate-800">CHUYÊN VIÊN DIGITAL MARKETING [cite: 72]</h3>
+                <p class="text-emerald-600 font-semibold mb-2">Tập đoàn Bảo Tín Mạnh Hải [cite: 73]</p>
+                <p class="text-slate-500 text-sm mb-4 italic">10/2024 – 07/2025 [cite: 75, 76]</p>
+                <ul class="text-slate-600 space-y-2 text-sm">
+                    <li>• Đạt doanh thu vàng ta 46 tỷ/tháng với CP/DT tối ưu chỉ 7%[cite: 81].</li>
+                    <li>• Phân tích số liệu Ads đa kênh (Social Media & Google) cho TMĐT và Brand[cite: 77, 78].</li>
+                </ul>
+            </div>
+
+            <div class="relative">
+                <div class="absolute -left-[41px] top-0 w-5 h-5 bg-slate-300 rounded-full border-4 border-white"></div>
+                <h3 class="text-xl font-bold text-slate-800">SENIOR DIGITAL MARKETING [cite: 61]</h3>
+                <p class="text-emerald-600 font-semibold mb-2">Thời trang thiết kế Mys.P [cite: 62]</p>
+                <p class="text-slate-500 text-sm mb-4 italic">2023 – 2024 [cite: 64]</p>
+                <ul class="text-slate-600 space-y-2 text-sm">
+                    <li>• Giải cứu dự án từ CP/DT >80% xuống mức 30%, đạt doanh thu 2.3 tỷ/3 tháng[cite: 65, 70].</li>
+                    <li>• Xây dựng quy trình nội dung phối hợp Media/Stylist dựa trên xu hướng AI[cite: 65, 66].</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <section class="bg-slate-100 py-20 px-6">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-8 tracking-tight italic">HỌC VẤN [cite: 1, 5]</h2>
+                <div class="bg-white p-6 rounded-xl shadow-sm space-y-4">
+                    <div>
+                        <p class="font-bold text-slate-800">Đại Học Kinh Tế Quốc Dân [cite: 7]</p>
+                        <p class="text-slate-500 text-sm italic">Cử nhân Quản trị Kinh doanh (2022-2026) [cite: 6, 8]</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <p class="font-bold text-slate-800">FPT Polytechnic [cite: 3]</p>
+                        <p class="text-slate-500 text-sm italic">Cử nhân Marketing (2017-2021) [cite: 1, 2, 4]</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-8 tracking-tight italic">NĂNG LỰC CỐT LÕI [cite: 51, 53]</h2>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold">AI Marketing [cite: 53]</span>
+                    <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold">Data-Driven Strategy [cite: 53]</span>
+                    <span class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold">ROI Optimization [cite: 59, 93]</span>
+                    <span class="bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold">Cross-Border Ads [cite: 87]</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-slate-400 text-xs">
+        <p>© 2026 KIỀU CAO LONG. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
