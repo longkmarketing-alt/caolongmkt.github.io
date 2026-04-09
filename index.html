@@ -3,31 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kiều Cao Long | Senior Marketing Manager</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Kiều Cao Long | Senior Marketing Manager Portfolio</title>
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
-        :root { --primary: #10b981; --dark: #020617; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--dark); color: #f8fafc; margin: 0; }
-        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); }
-        .text-gradient { background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .portrait-container { border-radius: 2.5rem; overflow: hidden; border: 1px solid rgba(16, 185, 129, 0.2); position: relative; }
-        /* Đảm bảo nội dung không bị ẩn nếu AOS chưa load */
+        
+        :root { --primary: #10b981; --secondary: #3b82f6; --dark: #020617; }
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--dark); 
+            color: #f8fafc; 
+            overflow-x: hidden;
+        }
+
+        /* 1. Hiệu ứng Kính (Glassmorphism) */
+        .glass { 
+            background: rgba(255, 255, 255, 0.01); 
+            backdrop-filter: blur(20px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        /* 2. Hiệu ứng Ánh sáng AI Glow (Gradient Animation) */
+        .ai-glow-border {
+            position: relative;
+            border-radius: 2.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            overflow: hidden;
+        }
+        .ai-glow-border::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: conic-gradient(transparent, transparent, transparent, var(--primary));
+            animation: rotate-glow 6s linear infinite;
+        }
+        .ai-glow-border::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: var(--dark);
+            border-radius: 2.5rem;
+        }
+        @keyframes rotate-glow {
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 3. Chuyển động đồ họa nền */
+        .bg-animate {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+            animation: pulse-bg 10s infinite alternate;
+        }
+        @keyframes pulse-bg {
+            0% { transform: scale(1); opacity: 0.5; }
+            100% { transform: scale(1.5); opacity: 0.8; }
+        }
+
+        .text-gradient { 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+
+        /* Tối ưu hiển thị cho GitHub */
         [data-aos] { opacity: 1 !important; transform: none !important; }
     </style>
 </head>
-<body class="bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.1)_0%,transparent_50%)]">
+<body>
+    <div class="bg-animate"></div>
 
     <nav class="fixed w-full z-[100] glass py-4 px-8 border-b border-white/5">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="text-2xl font-800 tracking-tighter uppercase">Long<span class="text-emerald-500">KC.</span></div>
-            <div class="hidden md:flex gap-8 text-[10px] font-bold tracking-widest text-gray-400">
+            <div class="hidden md:flex gap-10 text-[10px] font-bold tracking-widest text-gray-400">
                 <a href="#about" class="hover:text-emerald-500 transition">MỤC TIÊU</a>
                 <a href="#experience" class="hover:text-emerald-500 transition">KINH NGHIỆM</a>
                 <a href="#skills" class="hover:text-emerald-500 transition">KỸ NĂNG</a>
-                <a href="mailto:longkc.marketing@gmail.com" class="px-5 py-2 bg-emerald-500 text-slate-950 rounded-full font-800 hover:scale-105 transition uppercase">Kết nối</a>
+                <a href="mailto:longkc.marketing@gmail.com" class="px-6 py-2 bg-emerald-500 text-slate-950 rounded-full font-800 transition shadow-lg shadow-emerald-500/20">HIRE ME</a>
             </div>
         </div>
     </nav>
@@ -35,139 +97,148 @@
     <section id="about" class="min-h-screen flex items-center pt-24 px-6 relative">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div data-aos="fade-right">
-                <div class="inline-block px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase mb-6 tracking-widest">
-                    Growth & Data-Driven Strategist
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase mb-6 tracking-widest">
+                    <i class="fas fa-microchip"></i> Senior Marketing Manager
                 </div>
-                <h1 class="text-6xl md:text-8xl font-800 leading-[0.9] mb-6 uppercase tracking-tighter">
-                    KIỀU CAO <br><span class="text-gradient">LONG</span>
-                </h1>
-                <p class="text-gray-400 text-lg leading-relaxed mb-8">
-                    Chuyên gia Digital Marketing với hơn 6 năm kinh nghiệm thực chiến đa quốc gia (Việt Nam, Qatar, UAE, Philippines, Malaysia). Thế mạnh cốt lõi là xây dựng chiến lược dựa trên dữ liệu (Data-driven), ứng dụng <b>AI Marketing</b> để tối ưu hóa quy trình và bứt phá doanh thu.
+                <h1 class="text-6xl md:text-8xl font-800 leading-[0.9] mb-6 uppercase tracking-tighter">Kiều Cao <br><span class="text-gradient">Long</span></h1>
+                <p class="text-gray-400 text-lg md:text-xl max-w-xl leading-relaxed mb-10 font-medium">
+                    Chuyên gia Digital Marketing với hơn 8 năm thực chiến đa quốc gia[cite: 1]. Chuyên gia xây dựng chiến lược dựa trên dữ liệu (Data-driven) và ứng dụng <b>AI Marketing</b> để tối ưu hóa doanh thu.
                 </p>
-                <div class="flex flex-wrap gap-4">
-                    <div class="px-6 py-3 glass rounded-xl border-emerald-500/20">
-                        <i class="fas fa-phone-alt text-emerald-500 mr-2"></i> 0388 830 044
-                    </div>
-                    <div class="px-6 py-3 glass rounded-xl border-emerald-500/20">
-                        <i class="fas fa-envelope text-emerald-500 mr-2"></i> longkc.marketing@gmail.com
-                    </div>
+                <div class="flex gap-5">
+                    <a href="tel:0388830044" class="p-4 glass rounded-2xl text-emerald-500 hover:scale-110 transition"><i class="fas fa-phone-alt text-xl"></i></a>
+                    <a href="mailto:longkc.marketing@gmail.com" class="p-4 glass rounded-2xl text-emerald-500 hover:scale-110 transition"><i class="far fa-envelope text-xl"></i></a>
+                    <a href="https://facebook.com/CaoLong.300499" target="_blank" class="p-4 glass rounded-2xl text-emerald-500 hover:scale-110 transition"><i class="fab fa-facebook-f text-xl"></i></a>
                 </div>
             </div>
             
-            <div class="relative" data-aos="zoom-in">
-                <div class="portrait-container glass">
-                    <img src="https://files.catbox.moe/k3e80t.jpg" alt="Kiều Cao Long" class="w-full grayscale hover:grayscale-0 transition duration-1000">
-                    <div class="absolute bottom-6 left-6 right-6 glass p-6 rounded-2xl border-emerald-500/20 text-center">
-                        <p class="text-emerald-400 text-2xl font-800 tracking-tighter italic uppercase">AI & Performance</p>
-                    </div>
+            <div class="relative flex justify-center" data-aos="zoom-in">
+                <div class="ai-glow-border w-full max-w-md aspect-[3/4]">
+                    <img src="https://files.catbox.moe/k3e80t.jpg" alt="Kiều Cao Long" class="relative z-10 w-full h-full object-cover rounded-[2.5rem] grayscale hover:grayscale-0 transition duration-1000">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="py-24 px-6 bg-slate-950/30">
+    <section id="experience" class="py-32 px-6">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-4xl font-800 mb-16 uppercase text-center tracking-tighter italic">Kinh nghiệm <span class="text-gradient">Làm việc</span></h2>
+            <h2 class="text-4xl font-800 mb-20 uppercase tracking-tighter text-center italic">Professional <span class="text-gradient">Experience</span></h2>
             
-            <div class="space-y-10">
-                <div class="glass p-8 md:p-10 rounded-[2.5rem]" data-aos="fade-up">
+            <div class="space-y-16">
+                <div class="glass p-10 rounded-[3rem] relative group border-l-4 border-emerald-500" data-aos="fade-up">
                     <div class="flex flex-col md:flex-row justify-between mb-6">
                         <div>
-                            <h3 class="text-2xl font-800 text-emerald-500 uppercase">Leader Digital Marketing</h3>
-                            <p class="text-white font-bold text-sm mt-1">Hệ thống Thẩm mỹ Quốc tế (Julie, Jolie, Mercy, Rosa, Lustro)</p>
-                            <p class="text-emerald-500/80 text-[10px] font-bold tracking-widest uppercase">Qatar – UAE – Philippines – Malaysia</p>
+                            <span class="text-emerald-500 font-800 text-xs tracking-widest uppercase italic">07/2025 – Hiện tại [cite: 5]</span>
+                            <h3 class="text-2xl font-800 mt-2 uppercase tracking-tight">Leader Digital Marketing</h3>
+                            <p class="text-gray-400 font-bold text-sm uppercase italic">Hệ thống Thẩm mỹ Quốc tế (Julie, Jolie, Mercy, Rosa, Lustro)</p>
+                            <p class="text-emerald-500/80 text-[10px] font-bold tracking-widest uppercase">Qatar – UAE – Philippines – Malaysia [cite: 4]</p>
                         </div>
-                        <span class="text-gray-500 font-bold text-xs mt-2 md:mt-0 uppercase">07/2025 – HIỆN TẠI</span>
                     </div>
                     <ul class="text-gray-400 text-sm space-y-4 leading-relaxed">
-                        <li class="flex gap-3"><span>•</span> <b>Quản trị chiến lược:</b> Trực tiếp điều hành đội nhóm Ads, liên kết đa phòng ban (Ads, Sales, Media, Clinic) để đảm bảo mục tiêu doanh thu tổng.</li>
-                        <li class="flex gap-3"><span>•</span> <b>Tối ưu hóa Data-driven:</b> Xây dựng hệ thống báo cáo số liệu hàng tuần/tháng, ứng dụng AI để phân tích hành vi khách hàng và tối ưu hóa phễu chuyển đổi (CR).</li>
-                        <li class="flex gap-3"><span>•</span> <b>Kết quả:</b> Duy trì doanh thu 4 tỷ - 6 tỷ VNĐ/tháng/thương hiệu với tỷ lệ CP/DT ổn định 25% - 30%. Cải thiện 3%-5% tỷ lệ chuyển đổi qua chuẩn hóa quy trình.</li>
+                        <li class="flex gap-3"><i class="fas fa-check-circle text-emerald-500 mt-1"></i> Trực tiếp điều hành đội nhóm Marketing Ads, liên kết đa phòng ban để đảm bảo doanh thu tổng[cite: 5].</li>
+                        <li class="flex gap-3"><i class="fas fa-check-circle text-emerald-500 mt-1"></i> Xây dựng hệ thống báo cáo Data-driven, ứng dụng AI để phân tích hành vi khách hàng và tối ưu CR[cite: 6].</li>
+                        <li class="flex gap-3"><i class="fas fa-check-circle text-emerald-500 mt-1"></i> Duy trì doanh thu 4-6 tỷ VNĐ/tháng/brand; Cải thiện 3%-5% CR qua chuẩn hóa quy trình[cite: 8, 9].</li>
                     </ul>
                 </div>
 
-                <div class="glass p-8 md:p-10 rounded-[2.5rem]" data-aos="fade-up">
+                <div class="glass p-10 rounded-[3rem] relative group border-l-4 border-gray-700" data-aos="fade-up">
                     <div class="flex flex-col md:flex-row justify-between mb-6">
                         <div>
-                            <h3 class="text-2xl font-800 text-emerald-500 uppercase">Chuyên viên Digital Marketing</h3>
-                            <p class="text-white font-bold text-sm mt-1">Tập đoàn Bảo Tín Mạnh Hải</p>
+                            <span class="text-emerald-500 font-800 text-xs tracking-widest uppercase italic">10/2024 – 07/2025 [cite: 10]</span>
+                            <h3 class="text-2xl font-800 mt-2 uppercase tracking-tight">Chuyên viên Digital Marketing</h3>
+                            <p class="text-gray-400 font-bold text-sm uppercase italic">Tập đoàn Bảo Tín Mạnh Hải [cite: 10]</p>
                         </div>
-                        <span class="text-gray-500 font-bold text-xs mt-2 md:mt-0 uppercase">10/2024 – 07/2025</span>
                     </div>
                     <ul class="text-gray-400 text-sm space-y-4 leading-relaxed">
-                        <li class="flex gap-3"><span>•</span> Lập kế hoạch và thực thi Ads cho mảng TMĐT và Branding trên các kênh Social Media & Google.</li>
-                        <li class="flex gap-3"><span>•</span> <b>Kết quả:</b> Đạt doanh thu vàng ta 46 tỷ/tháng và vàng tây 1.3 tỷ/tháng. Tối ưu tổng chi phí Marketing (CP/DT) ở mức xuất sắc 7%.</li>
+                        <li class="flex gap-3"><i class="fas fa-chart-line text-emerald-500 mt-1"></i> Đạt doanh thu kỷ lục: vàng ta 46 tỷ/tháng và vàng tây 1.3 tỷ/tháng[cite: 12].</li>
+                        <li class="flex gap-3"><i class="fas fa-chart-line text-emerald-500 mt-1"></i> Tối ưu chi phí Marketing (CP/DT) ở mức xuất sắc chỉ 7%[cite: 13].</li>
+                        <li class="flex gap-3"><i class="fas fa-chart-line text-emerald-500 mt-1"></i> Thực thi Ads cho mảng TMĐT và Branding trên Social Media & Google[cite: 10].</li>
                     </ul>
                 </div>
 
-                <div class="glass p-8 md:p-10 rounded-[2.5rem]" data-aos="fade-up">
+                <div class="glass p-10 rounded-[3rem] relative group border-l-4 border-gray-700" data-aos="fade-up">
                     <div class="flex flex-col md:flex-row justify-between mb-6">
                         <div>
-                            <h3 class="text-2xl font-800 text-emerald-500 uppercase">Senior Digital Marketing</h3>
-                            <p class="text-white font-bold text-sm mt-1">Công ty Thời trang thiết kế Mys.P</p>
+                            <span class="text-emerald-500 font-800 text-xs tracking-widest uppercase italic">04/2023 – 10/2024 [cite: 14]</span>
+                            <h3 class="text-2xl font-800 mt-2 uppercase tracking-tight">Senior Digital Marketing</h3>
+                            <p class="text-gray-400 font-bold text-sm uppercase italic">Công ty Thời trang thiết kế Mys.P [cite: 14]</p>
                         </div>
-                        <span class="text-gray-500 font-bold text-xs mt-2 md:mt-0 uppercase">04/2023 – 10/2024</span>
                     </div>
                     <ul class="text-gray-400 text-sm space-y-4 leading-relaxed">
-                        <li class="flex gap-3"><span>•</span> <b>Tái cấu trúc:</b> Tiếp nhận bộ máy vận hành kém hiệu quả (CP/DT > 80%), tối ưu hóa để đạt doanh thu 2.3 tỷ/tháng sau 3 tháng với CP/DT 30%.</li>
-                        <li class="flex gap-3"><span>•</span> Quản lý và huấn luyện đội ngũ 3 chuyên viên Ads nắm vững tư duy và quy trình.</li>
+                        <li class="flex gap-3"><i class="fas fa-redo text-emerald-500 mt-1"></i> Tái cấu trúc: Giảm CP/DT từ > 80% xuống còn 30%, đạt doanh thu 2.3 tỷ sau 3 tháng[cite: 14].</li>
+                        <li class="flex gap-3"><i class="fas fa-redo text-emerald-500 mt-1"></i> Xây dựng kịch bản bán hàng đa nền tảng, phát triển kênh TikTok từ con số 0[cite: 15].</li>
+                        <li class="flex gap-3"><i class="fas fa-redo text-emerald-500 mt-1"></i> Quản lý và huấn luyện đội ngũ 3 chuyên viên Ads[cite: 16].</li>
                     </ul>
                 </div>
 
-                <div class="glass p-8 md:p-10 rounded-[2.5rem]" data-aos="fade-up">
+                <div class="glass p-10 rounded-[3rem] relative group border-l-4 border-gray-700" data-aos="fade-up">
                     <div class="flex flex-col md:flex-row justify-between mb-6">
                         <div>
-                            <h3 class="text-2xl font-800 text-emerald-500 uppercase">Chuyên viên Marketing</h3>
-                            <p class="text-white font-bold text-sm mt-1">Tập đoàn PMA (Thời trang Chancos)</p>
+                            <span class="text-emerald-500 font-800 text-xs tracking-widest uppercase italic">06/2021 – 08/2022 [cite: 17]</span>
+                            <h3 class="text-2xl font-800 mt-2 uppercase tracking-tight">Chuyên viên Marketing</h3>
+                            <p class="text-gray-400 font-bold text-sm uppercase italic">Tập đoàn PMA (Thời trang Chancos) [cite: 17]</p>
                         </div>
-                        <span class="text-gray-500 font-bold text-xs mt-2 md:mt-0 uppercase">06/2021 – 08/2022</span>
                     </div>
                     <ul class="text-gray-400 text-sm space-y-4 leading-relaxed">
-                        <li class="flex gap-3"><span>•</span> Lên kế hoạch Marketing ngắn và dài hạn cho thương hiệu thời trang cao cấp Chancos.</li>
-                        <li class="flex gap-3"><span>•</span> <b>Kết quả:</b> Đồng hành mở rộng lên 6 showroom toàn quốc, đạt doanh thu Online 3.6 tỷ với CP/DT 28%.</li>
+                        <li class="flex gap-3"><i class="fas fa-gem text-emerald-500 mt-1"></i> Mở rộng hệ thống lên 6 showroom toàn quốc, đạt doanh thu Online 3.6 tỷ[cite: 19].</li>
+                        <li class="flex gap-3"><i class="fas fa-gem text-emerald-500 mt-1"></i> Triển khai Ads cho từng bộ sưu tập, phối hợp Sales tối ưu tỷ lệ chốt đơn[cite: 18].</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="py-24 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
+    <section id="skills" class="py-32 px-6 glass bg-slate-900/50">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20">
             <div data-aos="fade-right">
-                <h2 class="text-3xl font-800 mb-8 uppercase italic tracking-tighter">Kỹ năng <span class="text-gradient">Chuyên môn</span></h2>
-                <div class="space-y-6">
-                    <div>
-                        <p class="text-xs font-bold text-gray-500 mb-2 uppercase tracking-widest">Digital Ads</p>
-                        <p class="text-sm text-gray-300">Facebook Ads, Google Ads, Zalo Ads, TikTok Marketing.</p>
+                <h2 class="text-4xl font-800 mb-12 uppercase tracking-tighter italic">Core <span class="text-gradient">Mastery</span></h2>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="p-6 glass rounded-2xl border-emerald-500/20">
+                        <i class="fas fa-bullseye text-emerald-500 text-2xl mb-4"></i>
+                        <h4 class="font-bold text-sm uppercase mb-2">Quản trị [cite: 20]</h4>
+                        <p class="text-gray-500 text-[10px]">Lập kế hoạch tổng thể, quản lý đội nhóm.</p>
                     </div>
-                    <div>
-                        <p class="text-xs font-bold text-gray-500 mb-2 uppercase tracking-widest">Data & AI</p>
-                        <p class="text-sm text-gray-300">Phân tích chỉ số (ROI, CR, CP/DT), ứng dụng AI trong sản xuất nội dung.</p>
+                    <div class="p-6 glass rounded-2xl border-emerald-500/20">
+                        <i class="fas fa-ad text-emerald-500 text-2xl mb-4"></i>
+                        <h4 class="font-bold text-sm uppercase mb-2">Digital Ads [cite: 21]</h4>
+                        <p class="text-gray-500 text-[10px]">Facebook, Google, Zalo, TikTok Marketing.</p>
                     </div>
-                    <div>
-                        <p class="text-xs font-bold text-gray-500 mb-2 uppercase tracking-widest">Quản trị</p>
-                        <p class="text-sm text-gray-300">Lập kế hoạch tổng thể, quản lý đội nhóm, xử lý khủng hoảng.</p>
+                    <div class="p-6 glass rounded-2xl border-emerald-500/20">
+                        <i class="fas fa-brain text-emerald-500 text-2xl mb-4"></i>
+                        <h4 class="font-bold text-sm uppercase mb-2">Data & AI [cite: 22]</h4>
+                        <p class="text-gray-500 text-[10px]">ROI, CR, AI Content & Ads Optimization.</p>
+                    </div>
+                    <div class="p-6 glass rounded-2xl border-emerald-500/20">
+                        <i class="fas fa-users text-emerald-500 text-2xl mb-4"></i>
+                        <h4 class="font-bold text-sm uppercase mb-2">Soft Skills [cite: 23]</h4>
+                        <p class="text-gray-500 text-[10px]">Thuyết trình, xử lý khủng hoảng.</p>
                     </div>
                 </div>
             </div>
+            
             <div data-aos="fade-left">
-                <h2 class="text-3xl font-800 mb-8 uppercase italic tracking-tighter">Học <span class="text-gradient">Vấn</span></h2>
+                <h2 class="text-4xl font-800 mb-12 uppercase tracking-tighter italic">Education <span class="text-gradient">& Contact</span></h2>
                 <div class="space-y-6">
-                    <div class="glass p-6 rounded-2xl">
-                        <p class="font-bold">Đại học Kinh tế Quốc dân</p>
-                        <p class="text-gray-400 text-sm">Cử nhân Quản trị Kinh doanh (2022 - 2026)</p>
+                    <div class="glass p-8 rounded-[2rem]">
+                        <p class="text-emerald-500 font-bold text-xs mb-2 uppercase italic tracking-widest">Học vấn</p>
+                        <p class="font-bold text-sm uppercase">Đại học Kinh tế Quốc dân [cite: 24]</p>
+                        <p class="text-gray-500 text-xs mt-1">Cử nhân Quản trị Kinh doanh (2022 - 2026) [cite: 24]</p>
+                        <hr class="my-4 border-white/5">
+                        <p class="font-bold text-sm uppercase">FPT Polytechnic [cite: 25]</p>
+                        <p class="text-gray-500 text-xs mt-1">Cử nhân Marketing - Loại Khá (2017 - 2021) [cite: 25]</p>
                     </div>
-                    <div class="glass p-6 rounded-2xl">
-                        <p class="font-bold">FPT Polytechnic</p>
-                        <p class="text-gray-400 text-sm">Cử nhân Marketing - Tốt nghiệp loại Khá (2017 - 2021)</p>
+                    <div class="glass p-8 rounded-[2rem]">
+                        <p class="text-emerald-500 font-bold text-xs mb-4 uppercase italic tracking-widest">Địa chỉ liên hệ</p>
+                        <p class="text-gray-300 text-sm italic leading-loose">
+                            <i class="fas fa-map-marker-alt text-emerald-500 mr-2"></i> Số 155 Cầu Giấy, Dịch Vọng Hậu, Hà Nội [cite: 26]
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/5 text-center">
-        <p class="text-gray-600 text-[10px] font-bold tracking-[0.5em] uppercase">© 2026 KIỀU CAO LONG • 155 Cầu Giấy, Hà Nội</p>
+    <footer class="py-16 text-center">
+        <p class="text-gray-600 text-[10px] font-bold tracking-[0.6em] uppercase">© 2026 KIỀU CAO LONG • Growth & AI Strategist [cite: 1]</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
