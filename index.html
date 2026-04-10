@@ -143,40 +143,11 @@
             ]
         };
 
-       // DÁN ĐOẠN NÀY VÀO THAY THẾ
-function displayAvatar(url) {
-    // 1. Tìm mã ID duy nhất của ảnh từ link Drive
-    const match = url.match(/[-\w]{25,}/);
-    const imageId = match ? match[0] : null;
-
-    if (imageId) {
-        const imgElement = document.getElementById('avatar');
-        
-        // 2. Sử dụng API chính thức của Google để lấy ảnh thô (Direct Link)
-        // Cách này đảm bảo ảnh hiện lên đầy đủ, không bị cắt
-        const primaryLink = `https://lh3.googleusercontent.com/d/${imageId}`;
-        imgElement.src = primaryLink;
-
-        // 3. Cơ chế dự phòng: Nếu link trên lỗi, tự động chuyển sang link dự phòng ngay lập tức
-        imgElement.onerror = function() {
-            console.warn("Đang chuyển sang link dự phòng cho ảnh...");
-            this.src = `https://drive.google.com/uc?export=view&id=${imageId}`;
-            
-            // Nếu vẫn lỗi (do quyền truy cập), thông báo để người dùng kiểm tra lại Drive
-            this.onerror = function() {
-                console.error("Không thể tải ảnh. Hãy chắc chắn link Drive đã được để ở chế độ CÔNG KHAI.");
-            };
-        };
-    }
+       // HÀM LẤY ẢNH TỪ DRIVE GỐC CỦA BẠN (KHÔNG BỊ CẮT)
+function fixAndSetAvatar(url) {
+    const id = url.match(/[-\w]{25,}/);
+    document.getElementById('avatar').src = id ? `https://lh3.googleusercontent.com/d/${id[0]}` : '';
 }
-
-// Chỉnh sửa lại phần gọi hàm bên trong 'DOMContentLoaded'
-document.addEventListener('DOMContentLoaded', () => {
-    // Gọi hàm mới chúng ta vừa viết ở trên
-    displayAvatar(MY_DATA.drivePicLink); 
-    
-    // (Các phần code render Kinh nghiệm, Kỹ năng bên dưới giữ nguyên)
-});
 
         // HÀM RENDER NỘI DUNG RA GIAO DIỆN
         document.addEventListener('DOMContentLoaded', () => {
