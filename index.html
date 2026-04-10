@@ -3,150 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kiều Cao Long | Senior Marketing Manager</title>
+    <title>Kiều Cao Long | Senior Marketing Manager Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        // CẤU HÌNH CÔNG NGHỆ TAILWIND (Glow effect & Glassmorphism)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        tech_bg: '#0a0f1e', // Darker background
+                        tech_cyan: '#00e5ff',
+                        tech_blue: '#2979ff',
+                        tech_card: 'rgba(23, 33, 61, 0.6)',
+                        tech_border: 'rgba(0, 229, 255, 0.1)'
+                    },
+                    boxShadow: {
+                        'glow-cyan': '0 0 15px rgba(0, 229, 255, 0.5)',
+                        'glow-blue': '0 0 15px rgba(41, 121, 255, 0.5)'
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
-        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .tech-gradient { background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .card-hover:hover { transform: translateY(-5px); border-color: #00d2ff; transition: all 0.3s ease; }
-        .glow-button { background: linear-gradient(90deg, #00d2ff, #3a7bd5); box-shadow: 0 0 15px rgba(0, 210, 255, 0.5); }
+        /* CSS custom cho hiệu ứng chuyển đổi số */
+        body { background-color: #0a0f1e; color: #f8fafc; scroll-behavior: smooth; }
+        .tech-gradient-text { background: linear-gradient(90deg, #00e5ff 0%, #2979ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass-card { background: rgba(23, 33, 61, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(0, 229, 255, 0.1); }
+        .card-hover:hover { transform: translateY(-3px); border-color: rgba(0, 229, 255, 0.4); box-shadow: 0 0 10px rgba(0, 229, 255, 0.2); transition: all 0.3s ease; }
+        .btn-glow { transition: all 0.3s ease; }
+        .btn-glow:hover { box-shadow: 0 0 20px rgba(0, 229, 255, 0.8); }
+        /* Tối ưu ảnh Profile hình tròn */
+        .profile-pic-container { position: relative; width: 320px; height: 320px; }
+        .profile-pic { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 4px solid #0a0f1e; }
     </style>
 </head>
-<body class="leading-relaxed tracking-normal">
+<body class="leading-relaxed tracking-normal overflow-x-hidden">
 
-    <section class="min-h-screen flex items-center justify-center relative px-6 overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full opacity-10">
-            <div class="absolute top-10 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
-            <div class="absolute bottom-10 right-10 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+    <section id="hero" class="min-h-screen flex items-center justify-center relative px-6 py-20">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <div class="absolute top-10 left-10 w-96 h-96 bg-tech_cyan rounded-full mix-blend-screen filter blur-[128px] animate-pulse"></div>
+            <div class="absolute bottom-10 right-10 w-80 h-80 bg-tech_blue rounded-full mix-blend-screen filter blur-[128px] animate-pulse"></div>
         </div>
-        
-        <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center z-10">
-            <div class="order-2 md:order-1">
-                <h2 class="text-cyan-400 font-semibold tracking-widest mb-2 uppercase">Curriculum Vitae</h2>
-                <h1 class="text-5xl md:text-7xl font-bold mb-4">KIỀU CAO LONG</h1>
-                <h3 class="text-2xl md:text-3xl tech-gradient font-semibold mb-6">Senior Marketing Manager | Growth & Data-Driven Strategist</h3>
-                <p class="text-gray-400 text-lg mb-8 max-w-xl">
-                    Hơn 6 năm kinh nghiệm thực chiến đa quốc gia. Thế mạnh cốt lõi là xây dựng chiến lược dựa trên dữ liệu (Data-driven), ứng dụng AI Marketing để tối ưu hóa quy trình và bứt phá doanh thu.
-                </p>
-                <div class="flex gap-4">
-                    <a href="tel:0388830044" class="glow-button px-8 py-3 rounded-full font-bold hover:opacity-90 transition">Liên hệ ngay</a>
-                    <a href="https://web.facebook.com/cao.long.64020" target="_blank" class="glass px-8 py-3 rounded-full font-bold hover:bg-slate-800 transition text-white">Facebook</a>
+        <div class="container mx-auto grid md:grid-cols-[1fr,auto] gap-12 items-center z-10">
+            <div class="order-2 md:order-1 text-center md:text-left">
+                <h2 class="text-tech_cyan font-semibold tracking-widest mb-2 uppercase text-sm">CURRICULUM VITAE</h2>
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-4 tracking-tighter" id="profile-name">Loading...</h1>
+                <h3 class="text-2xl md:text-3xl tech-gradient-text font-bold mb-6" id="profile-title">Loading...</h3>
+                <p class="text-gray-400 text-lg mb-8 max-w-2xl mx-auto md:mx-0" id="profile-summary">Loading...</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#contact" class="btn-glow inline-block bg-tech_cyan text-tech_bg px-10 py-3.5 rounded-full font-bold shadow-glow-cyan">Liên hệ ngay</a>
+                    <a href="https://web.facebook.com/cao.long.64020" target="_blank" class="inline-block glass-card px-10 py-3.5 rounded-full font-bold hover:bg-slate-800 transition text-white">Facebook <i class="fab fa-facebook-f ml-2 text-sm"></i></a>
                 </div>
             </div>
             <div class="order-1 md:order-2 flex justify-center">
-                <div class="relative group">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full blur opacity-40 group-hover:opacity-75 transition duration-1000"></div>
-                    <img src="https://drive.google.com/uc?export=view&id=1UCKslPsdXyrlaugLsQqTXxt3BQF3WzBn" alt="Kiều Cao Long" class="relative rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-slate-900 shadow-2xl">
+                <div class="relative group profile-pic-container">
+                    <div class="absolute -inset-1.5 bg-gradient-to-r from-tech_cyan to-tech_blue rounded-full blur-md opacity-50 group-hover:opacity-100 transition duration-500"></div>
+                    <img id="profile-pic-img" src="" alt="Kiều Cao Long - Profile Pic" class="relative profile-pic shadow-2xl">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-slate-900/50">
+    <section id="experience" class="py-24 glass-card border-y-0">
         <div class="container mx-auto px-6">
-            <div class="flex items-center gap-4 mb-12">
-                <div class="h-1 w-20 bg-cyan-500"></div>
-                <h2 class="text-3xl font-bold uppercase tracking-wider">Kinh nghiệm làm việc</h2>
+            <div class="flex items-center gap-4 mb-16 max-w-lg mx-auto md:mx-0">
+                <div class="h-1 w-16 bg-tech_cyan rounded"></div>
+                <h2 class="text-4xl font-extrabold uppercase tracking-tight">Kinh nghiệm làm việc</h2>
             </div>
-
-            <div class="space-y-8">
-                <div class="glass p-8 rounded-2xl card-hover">
-                    <div class="flex flex-col md:flex-row justify-between mb-4">
-                        <h4 class="text-xl font-bold text-cyan-400">LEADER DIGITAL MARKETING | Hệ thống Thẩm mỹ Quốc tế</h4>
-                        <span class="text-gray-400">07/2025 – Hiện tại</span>
-                    </div>
-                    <p class="mb-4 text-blue-200 font-medium italic italic">Thị trường: Qatar – UAE – Philippines – Malaysia</p>
-                    <ul class="list-disc list-inside text-gray-400 space-y-2">
-                        <li>Trực tiếp điều hành đội nhóm Marketing Ads, liên kết đa phòng ban đảm bảo doanh thu tổng.</li>
-                        <li>Xây dựng hệ thống báo cáo số liệu, ứng dụng AI phân tích hành vi khách hàng và tối ưu phễu CR.</li>
-                        <li>Kết quả: Duy trì doanh thu 4 tỷ - 6 tỷ VNĐ/tháng/thương hiệu. Tỷ lệ CP/DT ổn định 25% - 30%.</li>
-                    </ul>
+            <div class="space-y-12" id="experience-container">
                 </div>
-
-                <div class="glass p-8 rounded-2xl card-hover">
-                    <div class="flex flex-col md:flex-row justify-between mb-4">
-                        <h4 class="text-xl font-bold text-cyan-400">CHUYÊN VIÊN DIGITAL MARKETING | Tập đoàn Bảo Tín Mạnh Hải</h4>
-                        <span class="text-gray-400">10/2024 – 07/2025</span>
-                    </div>
-                    <ul class="list-disc list-inside text-gray-400 space-y-2">
-                        <li>Lập kế hoạch và thực thi Ads cho cả mảng TMĐT và Branding trên Social & Google.</li>
-                        <li>Kết quả: Doanh thu vàng tây đạt 3.3 tỷ/tháng. Tối ưu chi phí Marketing ở mức 25%.</li>
-                    </ul>
-                </div>
-
-                <div class="glass p-8 rounded-2xl card-hover">
-                    <div class="flex flex-col md:flex-row justify-between mb-4">
-                        <h4 class="text-xl font-bold text-cyan-400">SENIOR DIGITAL MARKETING | Công ty Thời trang thiết kế Mys.P</h4>
-                        <span class="text-gray-400">04/2023 – 10/2024</span>
-                    </div>
-                    <ul class="list-disc list-inside text-gray-400 space-y-2">
-                        <li>Tái cấu trúc hệ thống vận hành kém (CP/DT > 80%) về mức 30%, doanh thu 2.3 tỷ/tháng.</li>
-                        <li>Phát triển kênh TikTok từ giai đoạn khởi tạo, đào tạo đội ngũ chuyên viên Ads.</li>
-                    </ul>
-                </div>
-            </div>
         </div>
     </section>
 
-    <section class="py-24">
+    <section id="skills" class="py-24">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 uppercase tracking-widest">Kỹ năng chuyên môn</h2>
-            <div class="grid md:grid-cols-4 gap-6">
-                <div class="glass p-6 rounded-xl text-center card-hover border-b-4 border-b-cyan-500">
-                    <i class="fas fa-chart-line text-4xl text-cyan-400 mb-4"></i>
-                    <h5 class="font-bold mb-2">Quản trị</h5>
-                    <p class="text-sm text-gray-400 font-light">Lập kế hoạch tổng thể, quản lý đội nhóm, đào tạo nhân sự.</p>
+            <h2 class="text-4xl font-extrabold text-center mb-16 uppercase tracking-tight">Kỹ năng chuyên môn</h2>
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6" id="skills-container">
                 </div>
-                <div class="glass p-6 rounded-xl text-center card-hover border-b-4 border-b-blue-500">
-                    <i class="fas fa-ad text-4xl text-blue-400 mb-4"></i>
-                    <h5 class="font-bold mb-2">Digital Ads</h5>
-                    <p class="text-sm text-gray-400 font-light">Facebook, Google, Zalo, TikTok Marketing chuyên sâu.</p>
-                </div>
-                <div class="glass p-6 rounded-xl text-center card-hover border-b-4 border-b-purple-500">
-                    <i class="fas fa-robot text-4xl text-purple-400 mb-4"></i>
-                    <h5 class="font-bold mb-2">Data & AI</h5>
-                    <p class="text-sm text-gray-400 font-light">Phân tích ROI, CR. Ứng dụng AI tối ưu quảng cáo.</p>
-                </div>
-                <div class="glass p-6 rounded-xl text-center card-hover border-b-4 border-b-green-500">
-                    <i class="fas fa-users text-4xl text-green-400 mb-4"></i>
-                    <h5 class="font-bold mb-2">Kỹ năng mềm</h5>
-                    <p class="text-sm text-gray-400 font-light">Thuyết trình, làm việc nhóm, xử lý khủng hoảng.</p>
-                </div>
-            </div>
         </div>
     </section>
 
-    <footer class="bg-slate-950 pt-20 pb-10 border-t border-slate-800">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 mb-12">
+    <footer id="contact" class="bg-[#070b16] pt-24 pb-12 border-t border-slate-900">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 mb-16">
             <div>
-                <h4 class="text-xl font-bold mb-6 text-white uppercase tracking-widest">Học vấn</h4>
-                <div class="space-y-4">
-                    <div>
-                        <p class="font-bold text-cyan-400 italic font-medium">Đại học Kinh tế Quốc dân</p>
-                        <p class="text-gray-400">Cử nhân Quản trị Kinh doanh (2022 - 2026)</p>
+                <h4 class="text-2xl font-bold mb-8 text-white uppercase tracking-wider flex items-center gap-3"><i class="fas fa-graduation-cap text-tech_blue"></i> Học vấn</h4>
+                <div class="space-y-6" id="education-container">
                     </div>
-                    <div>
-                        <p class="font-bold text-cyan-400 italic font-medium">FPT Polytechnic</p>
-                        <p class="text-gray-400">Cử nhân Marketing - Loại Khá (2017 - 2021)</p>
-                    </div>
-                </div>
             </div>
             <div>
-                <h4 class="text-xl font-bold mb-6 text-white uppercase tracking-widest">Thông tin liên hệ</h4>
-                <ul class="space-y-4 text-gray-400">
-                    <li><i class="fas fa-phone text-cyan-400 mr-3"></i> 0388 830 044</li>
-                    <li><i class="fas fa-envelope text-cyan-400 mr-3"></i> longkc.marketing@gmail.com</li>
-                    <li><i class="fas fa-map-marker-alt text-cyan-400 mr-3"></i> Số 155 Cầu Giấy, Dịch Vọng Hậu, Hà Nội</li>
+                <h4 class="text-2xl font-bold mb-8 text-white uppercase tracking-wider flex items-center gap-3"><i class="fas fa-address-book text-tech_cyan"></i> Thông tin liên hệ</h4>
+                <ul class="space-y-5 text-gray-300">
+                    <li><a href="tel:0388830044" class="hover:text-tech_cyan transition"><i class="fas fa-phone text-tech_cyan mr-3.5 w-5 text-center"></i> 0388 830 044</a></li>
+                    <li><a href="mailto:longkc.marketing@gmail.com" class="hover:text-tech_cyan transition"><i class="fas fa-envelope text-tech_cyan mr-3.5 w-5 text-center"></i> longkc.marketing@gmail.com</a></li>
+                    <li><i class="fas fa-map-marker-alt text-tech_cyan mr-3.5 w-5 text-center"></i> Số 155 Cầu Giấy, Dịch Vọng Hậu, Hà Nội</li>
+                    <li><i class="fas fa-bullseye text-tech_cyan mr-3.5 w-5 text-center"></i> <strong class="text-tech_blue">Mục tiêu:</strong> Đảm nhận vị trí Trưởng phòng/Lead Marketing.</li>
                 </ul>
             </div>
         </div>
-        <div class="text-center text-gray-600 text-sm border-t border-slate-900 pt-8">
-            &copy; 2026 Kiều Cao Long. Thiết kế bởi Chuyên gia Web (AI Assistant).
+        <div class="text-center text-gray-700 text-xs border-t border-slate-900/50 pt-10">
+            &copy; 2026 Kiều Cao Long Portfolio. Thiết kế Chuyển đổi số bởi [Your AI Assistant].
         </div>
     </footer>
 
+    <script>
+        // CƠ SỞ DỮ LIỆU PROFILE (Quản lý tập trung)
+        const PROFILE_DATA = {
+            hero: {
+                name: "KIỀU CAO LONG",
+                title: "Senior Marketing Manager | Growth & Data-Driven Strategist",
+                summary: "Chuyên gia Digital Marketing với hơn 6 năm kinh nghiệm thực chiến đa quốc gia (Việt Nam, Qatar, UAE, Philippines, Malaysia). Thế mạnh cốt lõi là xây dựng chiến lược dựa trên dữ liệu (Data-driven), ứng dụng AI Marketing để tối ưu hóa quy trình và bứt phá doanh thu.",
+                // BƯỚC QUAN TRỌNG: Hãy Paste mã ảnh Base64 của bạn vào giữa dấu ngoặc kép dưới đây
+                // Ví dụ: imageBase64: "data:image/png;base64,iVBORw0KGgoAAA..."
+                imageBase64: "THAY_THE_MA_ANH_BASE64_CUA_BAN_VAI_DAY_VI_DU_data:image/jpeg;base64,...." 
+            },
+            experience: [
+                {
+                    title: "LEADER DIGITAL MARKETING",
+                    company: "Hệ thống Thẩm mỹ Quốc tế (Julie, Jolie, Mercy, Rosa, Lustro)",
+                    period: "07/2025 – Hiện tại",
+                    market: "Qatar – UAE – Philippines – Malaysia",
+                    achievements: [
+                        "Trực tiếp điều hành đội nhóm Marketing Ads, liên kết đa phòng ban để đảm bảo mục tiêu doanh thu tổng.",
+                        "Ứng dụng AI để phân tích hành vi khách hàng và tối ưu hóa phễu chuyển đổi (CR).",
+                        "Đảm bảo hiệu suất quảng cáo và kịch bản chốt đơn phối hợp cùng Sales để tối đa hóa ROI.",
+                        "Kết quả: Duy trì doanh thu 4 tỷ - 6 tỷ VNĐ/tháng/thương hiệu. Cải thiện 3%-5% tỷ lệ chuyển đổi."
+                    ]
+                },
+                {
+                    title: "CHUYÊN VIÊN DIGITAL MARKETING",
+                    company: "Tập đoàn Bảo Tín Mạnh Hải",
+                    period: "10/2024 – 07/2025",
+                    achievements: [
+                        "Lập kế hoạch, báo cáo và thực thi Ads cho mảng TMĐT và Branding trên Social Media & Google.",
+                        "Phối hợp cùng team Media/Content sản xuất nội dung chiến lược cho TikTok, Facebook.",
+                        "Kết quả: Doanh thu vàng tây 3.3 tỷ/tháng. Tối ưu CP/DT ở mức 25%."
+                    ]
+                },
+                {
+                    title: "SENIOR DIGITAL MARKETING",
+                    company: "Công ty Thời trang thiết kế Mys.P",
+                    period: "04/2023 – 10/2024",
+                    achievements: [
+                        "Tái cấu trúc hệ thống vận hành kém hiệu quả, đạt doanh thu 2.3 tỷ/tháng sau 3 tháng với CP/DT 30%.",
+                        "Kết hợp với Stylist và Content xây dựng kịch bản bán hàng đa nền tảng, phát triển kênh TikTok.",
+                        "Quản lý và huấn luyện đội ngũ 3 chuyên viên Ads."
+                    ]
+                },
+                {
+                    title: "CHUYÊN VIÊN MARKETING",
+                    company: "Tập đoàn PMA (Thời trang Chancos)",
+                    period: "06/2021 – 08/2022",
+                    achievements: [
+                        "Lên kế hoạch Marketing ngắn và dài hạn cho thương hiệu thời trang Chancos.",
+                        "Triển khai Ads cho từng bộ sưu tập, tối ưu tỷ lệ chốt đơn.",
+                        "Kết quả: Đồng hành mở rộng hệ thống lên 6 showroom toàn quốc, đạt doanh thu Online 3.6 tỷ."
+                    ]
+                }
+            ],
+            skills: [
+                { icon: "fa-chart-line", name: "Quản trị", desc: "Lập kế hoạch tổng thể, quản lý đội nhóm, đào tạo nhân sự.", border: "border-b-tech_cyan" },
+                { icon: "fa-ad", name: "Digital Ads", desc: "Facebook, Google, Zalo, TikTok Marketing.", border: "border-b-tech_blue" },
+                { icon: "fa-robot", name: "Data & AI", desc: "Phân tích ROI, CR, ứng dụng AI tối ưu hóa.", border: "border-b-purple-500" },
+                { icon: "fa-users", name: "Kỹ năng mềm", desc: "Thuyết trình, làm việc nhóm, xử lý khủng hoảng chuyên môn.", border: "border-b-green-500" }
+            ],
+            education: [
+                { school: "Đại học Kinh tế Quốc dân", degree: "Cử nhân Quản trị Kinh doanh", year: "(2022 - 2026)" },
+                { school: "FPT Polytechnic", degree: "Cử nhân Marketing - Khá", year: "(2017 - 2021)" }
+            ]
+        };
+
+        // HÀM RENDER DỮ LIỆU LÊN GIAO DIỆN
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load Hero
+            const data = PROFILE_DATA;
+            document.getElementById('profile-name').innerText = data.hero.name;
+            document.getElementById('profile-title').innerText = data.hero.title;
+            document.getElementById('profile-summary').innerText = data.hero.summary;
+            document.getElementById('profile-pic-img').src = data.hero.imageBase64; // Load ảnh từ Base64
+
+            // Load Experience
+            const expContainer = document.getElementById('experience-container');
+            data.experience.forEach(exp => {
+                expContainer.innerHTML += `
+                    <div class="glass-card p-9 rounded-2xl card-hover relative overflow-hidden group">
+                        <div class="absolute -right-10 -top-10 text-9xl text-tech_border group-hover:text-tech_cyan/20 transition-all duration-700 opacity-30"><i class="fas fa-briefcase"></i></div>
+                        <div class="flex flex-col md:flex-row justify-between mb-5 z-10 relative">
+                            <h4 class="text-2xl font-bold text-tech_cyan tracking-tight">${exp.title} | ${exp.company}</h4>
+                            <span class="text-tech_blue font-medium mt-1 md:mt-0">${exp.period}</span>
+                        </div>
+                        ${exp.market ? `<p class="mb-5 text-gray-300 font-medium italic z-10 relative">Thị trường: ${exp.market}</p>` : ''}
+                        <ul class="list-disc list-outside text-gray-400 space-y-2.5 ml-5 z-10 relative text-base">
+                            ${exp.achievements.map(a => `<li>${a}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            });
+
+            // Load Skills
+            const skillContainer = document.getElementById('skills-container');
+            data.skills.forEach(skill => {
+                skillContainer.innerHTML += `
+                    <div class="glass-card p-8 rounded-xl text-center card-hover border-b-4 ${skill.border} group">
+                        <i class="fas ${skill.icon} text-5xl text-gray-600 mb-6 group-hover:text-gray-100 transition duration-300"></i>
+                        <h5 class="font-bold text-lg mb-3">${skill.name}</h5>
+                        <p class="text-sm text-gray-400 font-light leading-relaxed">${skill.desc}</p>
+                    </div>
+                `;
+            });
+
+            // Load Education
+            const eduContainer = document.getElementById('education-container');
+            data.education.forEach(edu => {
+                eduContainer.innerHTML += `
+                    <div class="relative pl-6 border-l-2 border-slate-800">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-800 border-2 border-tech_blue"></div>
+                        <p class="font-bold text-lg text-gray-100">${edu.school}</p>
+                        <p class="text-gray-400 text-sm">${edu.degree} ${edu.year}</p>
+                    </div>
+                `;
+            });
+        });
+    </script>
 </body>
 </html>
